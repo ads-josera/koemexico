@@ -1,0 +1,31 @@
+{% import _self as menus %}
+
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('nav navbar-nav flex-row') }}>
+    {% else %}
+      <ul class="list-unstyled">
+    {% endif %}
+    {% for item in items %}
+      {%
+        set classes = [
+          'nav-item',
+          item.in_active_trail ? 'menu-item--active-trail',
+          loop.first ? 'first',
+          loop.last ? 'last',
+        ]
+      %}
+      <li{{ item.attributes.addClass(classes) }}>
+        {{ link(item.title, item.url, item.attributes.addClass('nav-link')) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

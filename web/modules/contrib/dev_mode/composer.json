@@ -1,0 +1,21 @@
+{
+    "name": "drupal/dev_mode",
+    "type": "drupal-module",
+    "description": "Enable this module to activate development mode on your Drupal site.",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "George Anderson (geoanders)",
+            "homepage": "https://www.drupal.org/u/geoanders",
+            "role": "Maintainer"
+        }
+    ],
+    "homepage": "https://drupal.org/project/dev_mode",
+    "support": {
+        "issues": "https://drupal.org/project/issues/dev_mode",
+        "source": "https://git.drupalcode.org/project/dev_mode"
+    },
+    "require": {
+        "drupal/core": "^8 || ^9 || ^10"
+    }
+}

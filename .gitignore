@@ -1,0 +1,23 @@
+# Dependencias instaladas por Composer.
+/vendor/
+
+# Configuración específica de cada entorno y archivos de usuarios.
+/web/sites/default/settings.php
+/web/sites/default/settings.local.php
+/web/sites/default/settings.ddev.php
+/web/sites/default/services.yml
+/web/sites/default/files/
+
+# Datos sensibles y artefactos locales.
+*.sql
+*.sql.gz
+*.zip
+*.tar.gz
+/logs/
+/backups/
+/dumps/
+.env
+.env.*
+
+# Metadatos del sistema operativo.
+.DS_Store

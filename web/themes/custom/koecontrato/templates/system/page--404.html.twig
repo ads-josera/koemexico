@@ -1,0 +1,28 @@
+{{ attach_library('koecontrato/system-page') }}
+{% include '@koecontrato/layout/header.html.twig' %}
+
+<div class="page-content">
+
+  <section class="ps-404 py-9 bg__lightenBlack--90">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-10 mx-auto align-self-center">
+          <div class="404-form text-center p-5 br__borderPX--15 img__border img__border--white bg__uni--white">
+            <a class="main-logo d-block pb-3 w-50 m-auto" href="{{ path('<front>') }}" rel="home">
+              <img src="{{ logo }}" />
+            </a>
+            <h2 class="m-0">404</h2>
+            <h3 class="text-uppercase font__letter-spacing--2">Error</h3>
+            <h5 class="py-4 font__weight--regular c__lightenBlack--30">{{ 'The URL you are looking for is not available or does not exist.' | t }}</h5>
+            <a class="btn btn__line--primary" href="{{ front_page }}">{{ 'RETURN' | t }}</i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{% include '@koecontrato/layout/footer.html.twig' %}
+
+

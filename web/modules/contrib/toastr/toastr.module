@@ -1,0 +1,30 @@
+<?php
+
+use Drupal\toastr\Form\ToastrSettingsForm;
+/**
+ * Implements hook_page_attachments().
+ */
+function toastr_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'toastr/messages';
+}
+
+/**
+ * Implements hook_js_settings_alter().
+ */
+function toastr_js_settings_alter(array &$settings, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  // Get all the Drupal status messages, so they do not appear anywhere else.
+  $messages = \Drupal::messenger()->deleteAll();
+  if (!empty($messages)) {
+    // Get toastr configs.
+    $config = \Drupal::config('toastr.settings');
+    // Get default settings.
+    $default_settings = ToastrSettingsForm::defaultSettings();
+    $keys = array_keys($default_settings);
+    foreach ($keys as $key) {
+      $settings[$key] = is_null($config->get($key)) ? $default_settings[$key] : $config->get($key);
+    }
+    $settings['toastr'] = [];
+    $settings['toastr']['messages'] = $messages;
+    $settings['toastr']['settings'] = $settings;
+  }
+}

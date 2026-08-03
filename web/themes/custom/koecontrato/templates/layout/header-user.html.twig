@@ -1,0 +1,20 @@
+<header id="site-header" class="header-user">
+  {% block head %}
+  {# Header #}
+  <div id="header-wrap" class="menu-principal text-uppercase">
+
+    <nav id="navbar_km" class="navbar navbar navbar-expand-lg fixed-top justify-content-end">
+
+      {% if page.menuuser %}
+        {{ page.menuuser }}
+      {% endif %}
+
+      <a class="navbar-brand logo logo-white" href="{{ path('<front>') }}">
+        <img id="logo-img" class="img-center" src="{{ base_path ~ directory }}/logo-white.svg"/>
+      </a>
+
+    </nav>
+
+  </div>
+  {% endblock %}
+</header>

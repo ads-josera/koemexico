@@ -1,0 +1,730 @@
+[19-Jun-2024 14:52:43 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 135
+[01-Jul-2024 15:59:14 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 135
+[04-Jul-2024 13:48:13 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7170.pdf?v=1720121530" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[09-Jul-2024 03:38:36 UTC] ParseError: syntax error, unexpected single-quoted string "] = true;", expecting "]" in /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module on line 199 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Extension/ModuleHandler.php(128): Drupal\Core\Extension\Extension->load()
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Extension/ModuleHandler.php(141): Drupal\Core\Extension\ModuleHandler->load('ks')
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(588): Drupal\Core\Extension\ModuleHandler->loadAll()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(46): Drupal\Core\DrupalKernel->preHandle(Object(Symfony\Component\HttpFoundation\Request))
+#4 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#5 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#6 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#7 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#9 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#12 {main}
+[17-Jul-2024 22:12:21 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[17-Jul-2024 22:12:21 America/Mexico_City] User error: Drupal\Core\Database\DatabaseExceptionWrapper thrown while calling __toString on a Drupal\Core\StringTranslation\TranslatableMarkup object in /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php on line 56: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "s".*, "t"."language" AS "language", "t"."translation" AS "translation", "t"."customized" AS "customized"
+FROM
+"locales_source" "s"
+LEFT OUTER JOIN "locales_target" "t" ON t.lid = s.lid AND t.language = :langcode
+WHERE ("s"."source" IN (:db_condition_placeholder_0)) AND ("s"."context" IN (:db_condition_placeholder_1)); Array
+(
+    [:db_condition_placeholder_0] =&gt; The website encountered an unexpected error. Try again later.
+    [:db_condition_placeholder_1] =&gt; 
+    [:langcode] =&gt; es
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php on line 20 #0 /home/customer/www/koemexico.net/public_html/web/core/includes/bootstrap.inc(164): _drupal_error_handler_real(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#1 [internal function]: _drupal_error_handler(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php(20): trigger_error('Drupal\\Core\\Dat...', 256)
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/EventSubscriber/FinalExceptionSubscriber.php(130): Drupal\Core\StringTranslation\TranslatableMarkup->__toString()
+#4 [internal function]: Drupal\Core\EventSubscriber\FinalExceptionSubscriber->onException(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#5 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#6 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(239): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(91): Symfony\Component\HttpKernel\HttpKernel->handleThrowable(Object(TypeError), Object(Symfony\Component\HttpFoundation\Request), 1)
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#9 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#10 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#18 {main}
+[19-Jul-2024 15:12:15 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[19-Jul-2024 15:12:57 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[19-Jul-2024 16:12:24 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[22-Jul-2024 10:37:00 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7060.pdf?v=1717512314" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[24-Jul-2024 17:08:58 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7169.pdf?v=1720053024" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[24-Jul-2024 19:39:04 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7227.pdf?v=1721870928" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[28-Jul-2024 21:45:55 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[30-Jul-2024 10:19:17 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:19:25 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:19:34 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:20:57 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:21:28 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:26:11 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:26:22 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:26:31 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:26:47 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:28:19 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:28:44 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:28:54 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:29:37 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:29:48 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[30-Jul-2024 10:29:51 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:28:31 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:30:17 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:30:30 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:31:19 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:31:35 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:31:43 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:32:47 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:33:23 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:33:41 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 08:34:24 America/Mexico_City] Uncaught PHP Exception Error: "Call to a member function id() on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Controller/AdminController.php line 234
+[31-Jul-2024 11:02:04 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 11:02:36 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7234.pdf?v=1722443637" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[31-Jul-2024 11:02:39 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 11:03:14 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 11:04:35 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 11:05:24 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 11:08:47 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 11:43:37 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 11:51:09 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 11:52:39 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 12:04:35 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 12:29:49 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 904
+[31-Jul-2024 15:13:43 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 906
+[31-Jul-2024 15:18:37 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 906
+[31-Jul-2024 15:22:39 America/Mexico_City] Uncaught PHP Exception Error: "Attempt to assign property "field_gfile" on null" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 906
+[02-Aug-2024 16:06:51 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[07-Aug-2024 13:06:51 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7268.pdf?v=1723054616" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[07-Aug-2024 13:40:35 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[07-Aug-2024 13:40:35 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => d4AW990-LddInbjg1gnp_uen26UjCTpo23mSoa2Q4_Q
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write(',XJWGs9i6njBFdt...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write(',XJWGs9i6njBFdt...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write(',XJWGs9i6njBFdt...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[07-Aug-2024 22:06:41 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[07-Aug-2024 22:06:41 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => XiB6vzIK-tUDRMaFirArTr7vbLIAzRgvFJeiZ1bkanM
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('ivk5bWIa9OLaTXg...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('ivk5bWIa9OLaTXg...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('ivk5bWIa9OLaTXg...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[08-Aug-2024 20:12:26 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7258.pdf?v=1723003507" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[08-Aug-2024 20:51:17 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[08-Aug-2024 20:51:30 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[10-Aug-2024 09:03:37 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[12-Aug-2024 18:06:31 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[12-Aug-2024 20:49:52 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[12-Aug-2024 20:50:13 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[12-Aug-2024 20:50:52 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[12-Aug-2024 20:51:16 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[12-Aug-2024 20:52:35 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[12-Aug-2024 20:53:13 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[12-Aug-2024 20:54:34 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[12-Aug-2024 21:04:51 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[13-Aug-2024 08:55:28 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[13-Aug-2024 22:18:58 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7285.pdf?v=1723606707" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[14-Aug-2024 12:30:55 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[15-Aug-2024 10:26:57 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7290.pdf?v=1723739102" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[24-Aug-2024 10:31:09 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7320.pdf?v=1724516103" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[05-Sep-2024 22:09:09 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7364.pdf?v=1725594635" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[11-Sep-2024 14:01:50 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[25-Sep-2024 19:34:18 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7410.pdf?v=1727313697" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[09-Oct-2024 21:06:37 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[09-Oct-2024 21:06:37 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => oQG4wyU4cZKqlqvM_APlAp4HpZ8itJVuapc6bxEIrWQ
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('V9RFwn8nHTXN9Lw...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('V9RFwn8nHTXN9Lw...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('V9RFwn8nHTXN9Lw...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[16-Oct-2024 21:09:40 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[16-Oct-2024 21:09:40 America/Mexico_City] User error: Drupal\Core\Database\DatabaseExceptionWrapper thrown while calling __toString on a Drupal\Core\StringTranslation\TranslatableMarkup object in /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php on line 56: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "s".*, "t"."language" AS "language", "t"."translation" AS "translation", "t"."customized" AS "customized"
+FROM
+"locales_source" "s"
+LEFT OUTER JOIN "locales_target" "t" ON t.lid = s.lid AND t.language = :langcode
+WHERE ("s"."source" IN (:db_condition_placeholder_0)) AND ("s"."context" IN (:db_condition_placeholder_1)); Array
+(
+    [:db_condition_placeholder_0] =&gt; The website encountered an unexpected error. Try again later.
+    [:db_condition_placeholder_1] =&gt; 
+    [:langcode] =&gt; es
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php on line 20 #0 /home/customer/www/koemexico.net/public_html/web/core/includes/bootstrap.inc(164): _drupal_error_handler_real(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#1 [internal function]: _drupal_error_handler(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php(20): trigger_error('Drupal\\Core\\Dat...', 256)
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/EventSubscriber/FinalExceptionSubscriber.php(130): Drupal\Core\StringTranslation\TranslatableMarkup->__toString()
+#4 [internal function]: Drupal\Core\EventSubscriber\FinalExceptionSubscriber->onException(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#5 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#6 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(239): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(91): Symfony\Component\HttpKernel\HttpKernel->handleThrowable(Object(TypeError), Object(Symfony\Component\HttpFoundation\Request), 1)
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#9 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#10 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#18 {main}
+[17-Oct-2024 11:13:25 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7466.pdf?v=1729123335" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[17-Oct-2024 21:07:24 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[17-Oct-2024 21:07:24 America/Mexico_City] User error: Drupal\Core\Database\DatabaseExceptionWrapper thrown while calling __toString on a Drupal\Core\StringTranslation\TranslatableMarkup object in /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php on line 56: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "s".*, "t"."language" AS "language", "t"."translation" AS "translation", "t"."customized" AS "customized"
+FROM
+"locales_source" "s"
+LEFT OUTER JOIN "locales_target" "t" ON t.lid = s.lid AND t.language = :langcode
+WHERE ("s"."source" IN (:db_condition_placeholder_0)) AND ("s"."context" IN (:db_condition_placeholder_1)); Array
+(
+    [:db_condition_placeholder_0] =&gt; The website encountered an unexpected error. Try again later.
+    [:db_condition_placeholder_1] =&gt; 
+    [:langcode] =&gt; es
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php on line 20 #0 /home/customer/www/koemexico.net/public_html/web/core/includes/bootstrap.inc(164): _drupal_error_handler_real(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#1 [internal function]: _drupal_error_handler(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php(20): trigger_error('Drupal\\Core\\Dat...', 256)
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/EventSubscriber/FinalExceptionSubscriber.php(130): Drupal\Core\StringTranslation\TranslatableMarkup->__toString()
+#4 [internal function]: Drupal\Core\EventSubscriber\FinalExceptionSubscriber->onException(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#5 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#6 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(239): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(91): Symfony\Component\HttpKernel\HttpKernel->handleThrowable(Object(TypeError), Object(Symfony\Component\HttpFoundation\Request), 1)
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#9 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#10 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#18 {main}
+[23-Oct-2024 16:57:46 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[14-Nov-2024 12:28:32 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7540.pdf?v=1731608745" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[14-Nov-2024 12:39:47 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[14-Nov-2024 12:39:47 America/Mexico_City] User error: Drupal\Core\Database\DatabaseExceptionWrapper thrown while calling __toString on a Drupal\Core\StringTranslation\TranslatableMarkup object in /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php on line 56: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "s".*, "t"."language" AS "language", "t"."translation" AS "translation", "t"."customized" AS "customized"
+FROM
+"locales_source" "s"
+LEFT OUTER JOIN "locales_target" "t" ON t.lid = s.lid AND t.language = :langcode
+WHERE ("s"."source" IN (:db_condition_placeholder_0)) AND ("s"."context" IN (:db_condition_placeholder_1)); Array
+(
+    [:db_condition_placeholder_0] =&gt; The website encountered an unexpected error. Try again later.
+    [:db_condition_placeholder_1] =&gt; 
+    [:langcode] =&gt; es
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php on line 20 #0 /home/customer/www/koemexico.net/public_html/web/core/includes/bootstrap.inc(164): _drupal_error_handler_real(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#1 [internal function]: _drupal_error_handler(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php(20): trigger_error('Drupal\\Core\\Dat...', 256)
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/EventSubscriber/FinalExceptionSubscriber.php(130): Drupal\Core\StringTranslation\TranslatableMarkup->__toString()
+#4 [internal function]: Drupal\Core\EventSubscriber\FinalExceptionSubscriber->onException(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#5 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#6 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(239): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(91): Symfony\Component\HttpKernel\HttpKernel->handleThrowable(Object(TypeError), Object(Symfony\Component\HttpFoundation\Request), 1)
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#9 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#10 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#18 {main}
+[20-Nov-2024 14:05:04 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7565.pdf?v=1732133049" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[20-Nov-2024 17:13:56 America/Mexico_City] Uncaught PHP Exception LogicException: "Form errors cannot be set after form validation has finished." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Form/FormState.php line 1104
+[11-Dec-2024 21:09:25 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Database\DatabaseExceptionWrapper: "SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "base_table"."id" AS "id", "base_table"."path" AS "path", "base_table"."alias" AS "alias", "base_table"."langcode" AS "langcode"
+FROM
+"path_alias" "base_table"
+WHERE ("base_table"."status" = :db_condition_placeholder_0) AND ("base_table"."alias" LIKE :db_condition_placeholder_1 ESCAPE '\\') AND ("base_table"."langcode" IN (:db_condition_placeholder_2, :db_condition_placeholder_3))
+ORDER BY "base_table"."langcode" ASC, "base_table"."id" DESC; Array
+(
+    [:db_condition_placeholder_0] => 1
+    [:db_condition_placeholder_1] => /contrato
+    [:db_condition_placeholder_2] => es
+    [:db_condition_placeholder_3] => und
+)
+" at /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php line 56
+[11-Dec-2024 21:09:25 America/Mexico_City] User error: Drupal\Core\Database\DatabaseExceptionWrapper thrown while calling __toString on a Drupal\Core\StringTranslation\TranslatableMarkup object in /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php on line 56: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "s".*, "t"."language" AS "language", "t"."translation" AS "translation", "t"."customized" AS "customized"
+FROM
+"locales_source" "s"
+LEFT OUTER JOIN "locales_target" "t" ON t.lid = s.lid AND t.language = :langcode
+WHERE ("s"."source" IN (:db_condition_placeholder_0)) AND ("s"."context" IN (:db_condition_placeholder_1)); Array
+(
+    [:db_condition_placeholder_0] =&gt; The website encountered an unexpected error. Try again later.
+    [:db_condition_placeholder_1] =&gt; 
+    [:langcode] =&gt; es
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php on line 20 #0 /home/customer/www/koemexico.net/public_html/web/core/includes/bootstrap.inc(164): _drupal_error_handler_real(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#1 [internal function]: _drupal_error_handler(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php(20): trigger_error('Drupal\\Core\\Dat...', 256)
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/EventSubscriber/FinalExceptionSubscriber.php(130): Drupal\Core\StringTranslation\TranslatableMarkup->__toString()
+#4 [internal function]: Drupal\Core\EventSubscriber\FinalExceptionSubscriber->onException(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#5 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#6 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(239): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(91): Symfony\Component\HttpKernel\HttpKernel->handleThrowable(Object(Drupal\Core\Database\DatabaseExceptionWrapper), Object(Symfony\Component\HttpFoundation\Request), 1)
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#9 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#10 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#18 {main}
+[11-Dec-2024 21:10:06 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Database\DatabaseExceptionWrapper: "SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "base_table"."id" AS "id", "base_table"."path" AS "path", "base_table"."alias" AS "alias", "base_table"."langcode" AS "langcode"
+FROM
+"path_alias" "base_table"
+WHERE ("base_table"."status" = :db_condition_placeholder_0) AND ("base_table"."alias" LIKE :db_condition_placeholder_1 ESCAPE '\\') AND ("base_table"."langcode" IN (:db_condition_placeholder_2, :db_condition_placeholder_3))
+ORDER BY "base_table"."langcode" ASC, "base_table"."id" DESC; Array
+(
+    [:db_condition_placeholder_0] => 1
+    [:db_condition_placeholder_1] => /contrato
+    [:db_condition_placeholder_2] => es
+    [:db_condition_placeholder_3] => und
+)
+" at /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php line 56
+[11-Dec-2024 21:10:06 America/Mexico_City] User error: Drupal\Core\Database\DatabaseExceptionWrapper thrown while calling __toString on a Drupal\Core\StringTranslation\TranslatableMarkup object in /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php on line 56: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "s".*, "t"."language" AS "language", "t"."translation" AS "translation", "t"."customized" AS "customized"
+FROM
+"locales_source" "s"
+LEFT OUTER JOIN "locales_target" "t" ON t.lid = s.lid AND t.language = :langcode
+WHERE ("s"."source" IN (:db_condition_placeholder_0)) AND ("s"."context" IN (:db_condition_placeholder_1)); Array
+(
+    [:db_condition_placeholder_0] =&gt; The website encountered an unexpected error. Try again later.
+    [:db_condition_placeholder_1] =&gt; 
+    [:langcode] =&gt; es
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php on line 20 #0 /home/customer/www/koemexico.net/public_html/web/core/includes/bootstrap.inc(164): _drupal_error_handler_real(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#1 [internal function]: _drupal_error_handler(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php(20): trigger_error('Drupal\\Core\\Dat...', 256)
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/EventSubscriber/FinalExceptionSubscriber.php(130): Drupal\Core\StringTranslation\TranslatableMarkup->__toString()
+#4 [internal function]: Drupal\Core\EventSubscriber\FinalExceptionSubscriber->onException(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#5 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#6 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(239): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(91): Symfony\Component\HttpKernel\HttpKernel->handleThrowable(Object(Drupal\Core\Database\DatabaseExceptionWrapper), Object(Symfony\Component\HttpFoundation\Request), 1)
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#9 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#10 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#18 {main}
+[11-Dec-2024 21:10:06 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Database\DatabaseExceptionWrapper: "SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "base_table"."id" AS "id", "base_table"."path" AS "path", "base_table"."alias" AS "alias", "base_table"."langcode" AS "langcode"
+FROM
+"path_alias" "base_table"
+WHERE ("base_table"."status" = :db_condition_placeholder_0) AND ("base_table"."alias" LIKE :db_condition_placeholder_1 ESCAPE '\\') AND ("base_table"."langcode" IN (:db_condition_placeholder_2, :db_condition_placeholder_3))
+ORDER BY "base_table"."langcode" ASC, "base_table"."id" DESC; Array
+(
+    [:db_condition_placeholder_0] => 1
+    [:db_condition_placeholder_1] => /contrato
+    [:db_condition_placeholder_2] => es
+    [:db_condition_placeholder_3] => und
+)
+" at /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php line 56
+[11-Dec-2024 21:10:06 America/Mexico_City] User error: Drupal\Core\Database\DatabaseExceptionWrapper thrown while calling __toString on a Drupal\Core\StringTranslation\TranslatableMarkup object in /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php on line 56: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "s".*, "t"."language" AS "language", "t"."translation" AS "translation", "t"."customized" AS "customized"
+FROM
+"locales_source" "s"
+LEFT OUTER JOIN "locales_target" "t" ON t.lid = s.lid AND t.language = :langcode
+WHERE ("s"."source" IN (:db_condition_placeholder_0)) AND ("s"."context" IN (:db_condition_placeholder_1)); Array
+(
+    [:db_condition_placeholder_0] =&gt; The website encountered an unexpected error. Try again later.
+    [:db_condition_placeholder_1] =&gt; 
+    [:langcode] =&gt; es
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php on line 20 #0 /home/customer/www/koemexico.net/public_html/web/core/includes/bootstrap.inc(164): _drupal_error_handler_real(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#1 [internal function]: _drupal_error_handler(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php(20): trigger_error('Drupal\\Core\\Dat...', 256)
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/EventSubscriber/FinalExceptionSubscriber.php(130): Drupal\Core\StringTranslation\TranslatableMarkup->__toString()
+#4 [internal function]: Drupal\Core\EventSubscriber\FinalExceptionSubscriber->onException(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#5 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#6 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(239): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(91): Symfony\Component\HttpKernel\HttpKernel->handleThrowable(Object(Drupal\Core\Database\DatabaseExceptionWrapper), Object(Symfony\Component\HttpFoundation\Request), 1)
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#9 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#10 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#18 {main}
+[11-Dec-2024 21:10:06 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Database\DatabaseExceptionWrapper: "SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "base_table"."id" AS "id", "base_table"."path" AS "path", "base_table"."alias" AS "alias", "base_table"."langcode" AS "langcode"
+FROM
+"path_alias" "base_table"
+WHERE ("base_table"."status" = :db_condition_placeholder_0) AND ("base_table"."alias" LIKE :db_condition_placeholder_1 ESCAPE '\\') AND ("base_table"."langcode" IN (:db_condition_placeholder_2, :db_condition_placeholder_3))
+ORDER BY "base_table"."langcode" ASC, "base_table"."id" DESC; Array
+(
+    [:db_condition_placeholder_0] => 1
+    [:db_condition_placeholder_1] => /contrato
+    [:db_condition_placeholder_2] => es
+    [:db_condition_placeholder_3] => und
+)
+" at /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php line 56
+[11-Dec-2024 21:10:06 America/Mexico_City] User error: Drupal\Core\Database\DatabaseExceptionWrapper thrown while calling __toString on a Drupal\Core\StringTranslation\TranslatableMarkup object in /home/customer/www/koemexico.net/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php on line 56: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT "s".*, "t"."language" AS "language", "t"."translation" AS "translation", "t"."customized" AS "customized"
+FROM
+"locales_source" "s"
+LEFT OUTER JOIN "locales_target" "t" ON t.lid = s.lid AND t.language = :langcode
+WHERE ("s"."source" IN (:db_condition_placeholder_0)) AND ("s"."context" IN (:db_condition_placeholder_1)); Array
+(
+    [:db_condition_placeholder_0] =&gt; The website encountered an unexpected error. Try again later.
+    [:db_condition_placeholder_1] =&gt; 
+    [:langcode] =&gt; es
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php on line 20 #0 /home/customer/www/koemexico.net/public_html/web/core/includes/bootstrap.inc(164): _drupal_error_handler_real(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#1 [internal function]: _drupal_error_handler(256, 'Drupal\\Core\\Dat...', '/home/customer/...', 20)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Utility/ToStringTrait.php(20): trigger_error('Drupal\\Core\\Dat...', 256)
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/EventSubscriber/FinalExceptionSubscriber.php(130): Drupal\Core\StringTranslation\TranslatableMarkup->__toString()
+#4 [internal function]: Drupal\Core\EventSubscriber\FinalExceptionSubscriber->onException(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#5 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#6 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(239): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\ExceptionEvent), 'kernel.exceptio...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-kernel/HttpKernel.php(91): Symfony\Component\HttpKernel\HttpKernel->handleThrowable(Object(Drupal\Core\Database\DatabaseExceptionWrapper), Object(Symfony\Component\HttpFoundation\Request), 1)
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#9 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#10 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#18 {main}
+[12-Dec-2024 13:01:17 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7640.pdf?v=1734028946" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[12-Dec-2024 18:27:42 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[12-Dec-2024 18:27:42 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => WRseOnio-Pl2FHL4QV8rgurgqPTSybVNfXoGxO6zHOo
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('RG6w6XQeD1DTztg...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('RG6w6XQeD1DTztg...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('RG6w6XQeD1DTztg...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[13-Dec-2024 09:53:46 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[13-Dec-2024 09:53:46 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => nTs-OrtSTvKybl0TazQyHdOpxoO8IziQfz4QUhIdJsE
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('2VbF4jhG6z3r78F...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('2VbF4jhG6z3r78F...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('2VbF4jhG6z3r78F...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[17-Dec-2024 17:30:50 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7651.pdf?v=1734476413" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[18-Dec-2024 16:56:05 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7654.pdf?v=1734562509" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[19-Dec-2024 11:44:27 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7661.pdf?v=1734630024" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[19-Dec-2024 18:03:03 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7658.pdf?v=1734652466" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[08-Jan-2025 13:39:23 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[20-Jan-2025 21:08:20 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[20-Jan-2025 21:08:20 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => lFw-czUmRu1Kx74UULpq4edFvxG04X5rxlEnCb0GLQc
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('YdTQzSXT7AMCjL3...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('YdTQzSXT7AMCjL3...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('YdTQzSXT7AMCjL3...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[21-Jan-2025 15:26:12 America/Mexico_City] Uncaught PHP Exception Symfony\Component\Routing\Exception\RouteNotFoundException: "Route "entity.action.add_form" does not exist." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Routing/RouteProvider.php line 206
+[27-Jan-2025 16:01:41 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[30-Jan-2025 14:26:17 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7762.pdf?v=1738168007" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[31-Jan-2025 23:12:59 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[31-Jan-2025 23:12:59 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => b2HQrygOl7ZZfcl8_N91ui7ir5W2yQe-Yu0YDMfzzOM
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('LlVrt0SJX7Vms4b...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('LlVrt0SJX7Vms4b...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('LlVrt0SJX7Vms4b...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[03-Feb-2025 21:06:04 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[03-Feb-2025 21:06:04 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => dCNom33oHj-fVUV32XqUR6PTm3KaYItrnQ-bJ86j2Ts
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('eScjFFLzjXSipRX...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('eScjFFLzjXSipRX...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('eScjFFLzjXSipRX...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[12-Feb-2025 21:36:13 America/Mexico_City] Uncaught PHP Exception TypeError: "Cannot access offset of type string on string" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/ks.module line 157
+[12-Feb-2025 21:56:36 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7839.pdf?v=1739417794" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[25-Feb-2025 20:57:42 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/FACTURACION_7100.pdf?v=1740536493" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[26-Feb-2025 11:45:18 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[26-Feb-2025 21:11:37 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[26-Feb-2025 21:11:37 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => r5zYs8XJZEwW_fhJkrz1mYfvkYBS9XoHE5RkFYMpAxY
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('nUhY8LqgR23N062...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('nUhY8LqgR23N062...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('nUhY8LqgR23N062...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[26-Feb-2025 21:17:52 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[26-Feb-2025 21:17:52 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => enpLqtHWq8ugW9oMSwu70enYcFpbNz1VOlVUeCDxQus
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('0y7-wZ6cn0LONhl...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('0y7-wZ6cn0LONhl...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('0y7-wZ6cn0LONhl...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[13-Mar-2025 13:05:37 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[15-Mar-2025 13:09:12 America/Mexico_City] Uncaught PHP Exception Drupal\Core\Entity\EntityStorageException: "cURL error 28: Operation timed out after 30002 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://koemexico.net/sites/default/files/pdf/previews/CONTRATO_PO-7942.pdf?v=1742065628" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[18-Mar-2025 09:42:12 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[18-Mar-2025 10:22:33 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[18-Mar-2025 14:03:29 America/Mexico_City] Uncaught PHP Exception TypeError: "curl_error(): Argument #1 ($handle) must be of type CurlHandle, null given" at /home/customer/www/koemexico.net/public_html/web/modules/custom/ks/src/Folio.php line 141
+[18-Mar-2025 17:10:23 America/Mexico_City] Uncaught PHP Exception TypeError: "Exception::__construct(): Argument #2 ($code) must be of type int, string given" at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php line 817
+[18-Mar-2025 17:10:23 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"sessions" "sessions"
+WHERE "sid" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => KIcdBWYsaE8Gz1vv_LOGKMdOPQMnZnAfwX-jq-CvuIA
+)
+ in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php on line 83 #0 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Connection.php(858): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Select.php(525): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Database/Query/Merge.php(379): Drupal\Core\Database\Query\Select->execute()
+#3 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionHandler.php(83): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/WriteSafeSessionHandler.php(95): Drupal\Core\Session\SessionHandler->write('fnlqzqS5G0QnmSG...', '_sf2_attributes...')
+#5 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/Proxy/SessionHandlerProxy.php(54): Drupal\Core\Session\WriteSafeSessionHandler->write('fnlqzqS5G0QnmSG...', '_sf2_attributes...')
+#6 [internal function]: Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy->write('fnlqzqS5G0QnmSG...', '_sf2_attributes...')
+#7 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorage.php(259): session_write_close()
+#8 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/Session/SessionManager.php(178): Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage->save()
+#9 /home/customer/www/koemexico.net/public_html/vendor/symfony/http-foundation/Session/Session.php(171): Drupal\Core\Session\SessionManager->save()
+#10 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/Session.php(61): Symfony\Component\HttpFoundation\Session\Session->save()
+#11 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/customer/www/koemexico.net/public_html/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/AjaxPageState.php(36): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\AjaxPageState->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#19 /home/customer/www/koemexico.net/public_html/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#20 {main}
+[18-Mar-2025 20:03:16 America/Mexico_City] Uncaught PHP Exception TypeError: "Drupal\autologout\AutologoutManager::__construct(): Argument #10 ($requestStack) must be of type Symfony\Component\HttpFoundation\RequestStack, Drupal\Core\StringTranslation\TranslationManager given, called in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php on line 259" at /home/customer/www/koemexico.net/public_html/web/modules/contrib/autologout/src/AutologoutManager.php line 130
+[18-Mar-2025 20:03:16 America/Mexico_City] Uncaught PHP Exception TypeError: "Drupal\autologout\AutologoutManager::__construct(): Argument #10 ($requestStack) must be of type Symfony\Component\HttpFoundation\RequestStack, Drupal\Core\StringTranslation\TranslationManager given, called in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php on line 259" at /home/customer/www/koemexico.net/public_html/web/modules/contrib/autologout/src/AutologoutManager.php line 130
+[18-Mar-2025 20:03:18 America/Mexico_City] Uncaught PHP Exception TypeError: "Drupal\autologout\AutologoutManager::__construct(): Argument #10 ($requestStack) must be of type Symfony\Component\HttpFoundation\RequestStack, Drupal\Core\StringTranslation\TranslationManager given, called in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php on line 259" at /home/customer/www/koemexico.net/public_html/web/modules/contrib/autologout/src/AutologoutManager.php line 130
+[18-Mar-2025 20:03:25 America/Mexico_City] Uncaught PHP Exception TypeError: "Drupal\autologout\AutologoutManager::__construct(): Argument #10 ($requestStack) must be of type Symfony\Component\HttpFoundation\RequestStack, Drupal\Core\StringTranslation\TranslationManager given, called in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php on line 259" at /home/customer/www/koemexico.net/public_html/web/modules/contrib/autologout/src/AutologoutManager.php line 130
+[18-Mar-2025 20:03:30 America/Mexico_City] Uncaught PHP Exception TypeError: "Drupal\autologout\AutologoutManager::__construct(): Argument #10 ($requestStack) must be of type Symfony\Component\HttpFoundation\RequestStack, Drupal\Core\StringTranslation\TranslationManager given, called in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php on line 259" at /home/customer/www/koemexico.net/public_html/web/modules/contrib/autologout/src/AutologoutManager.php line 130
+[18-Mar-2025 20:14:30 America/Mexico_City] Uncaught PHP Exception ArgumentCountError: "Too few arguments to function Drupal\permissions_by_term\Service\AccessCheck::__construct(), 3 passed in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php on line 259 and exactly 6 expected" at /home/customer/www/koemexico.net/public_html/web/modules/contrib/permissions_by_term/src/Service/AccessCheck.php line 83
+[18-Mar-2025 20:14:40 America/Mexico_City] Uncaught PHP Exception ArgumentCountError: "Too few arguments to function Drupal\permissions_by_term\Service\AccessCheck::__construct(), 3 passed in /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php on line 259 and exactly 6 expected" at /home/customer/www/koemexico.net/public_html/web/modules/contrib/permissions_by_term/src/Service/AccessCheck.php line 83
+[19-Mar-2025 02:19:14 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/customer/www/koemexico.net/public_html/vendor/composer/../symfony/polyfill-php72/bootstrap.php' (include_path='/home/customer/www/koemexico.net/public_html/vendor/pear/archive_tar:/home/customer/www/koemexico.net/public_html/vendor/pear/console_getopt:/home/customer/www/koemexico.net/public_html/vendor/pear/pear-core-minimal/src:/home/customer/www/koemexico.net/public_html/vendor/pear/pear_exception:.:/usr/local/php82/pear') in /home/customer/www/koemexico.net/public_html/vendor/composer/autoload_real.php:59
+Stack trace:
+#0 /home/customer/www/koemexico.net/public_html/vendor/composer/autoload_real.php(42): composerRequire014fe1230e32d746757ae89cad5c4fd8('25072dd6e247008...', '/home/customer/...')
+#1 /home/customer/www/koemexico.net/public_html/vendor/autoload.php(25): ComposerAutoloaderInit014fe1230e32d746757ae89cad5c4fd8::getLoader()
+#2 /home/customer/www/koemexico.net/public_html/web/autoload.php(16): require('/home/customer/...')
+#3 /home/customer/www/koemexico.net/public_html/web/index.php(14): require_once('/home/customer/...')
+#4 {main}
+  thrown in /home/customer/www/koemexico.net/public_html/vendor/composer/autoload_real.php on line 59
+[18-Mar-2025 20:32:20 America/Mexico_City] Uncaught PHP Exception Drupal\Component\Plugin\Exception\PluginException: "Plugin (default) instance class "Drupal\devel\Plugin\Devel\Dumper\DoctrineDebug" does not exist." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Plugin/Factory/DefaultFactory.php line 97
+[18-Mar-2025 20:32:27 America/Mexico_City] Uncaught PHP Exception Drupal\Component\Plugin\Exception\PluginException: "Plugin (default) instance class "Drupal\devel\Plugin\Devel\Dumper\DoctrineDebug" does not exist." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Plugin/Factory/DefaultFactory.php line 97
+[18-Mar-2025 20:35:31 America/Mexico_City] Uncaught PHP Exception Drupal\Component\Plugin\Exception\PluginException: "Plugin (default) instance class "Drupal\devel\Plugin\Devel\Dumper\DoctrineDebug" does not exist." at /home/customer/www/koemexico.net/public_html/web/core/lib/Drupal/Component/Plugin/Factory/DefaultFactory.php line 97

@@ -1,0 +1,40 @@
+{% import _self as menus %}
+
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('nav navbar-nav nav-main_koe') }}>
+    {% else %}
+      <ul class="list-unstyled">
+    {% endif %}
+    {% for item in items %}
+      {%
+        set classes = [
+          'nav-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+          item.below ? 'has-submenu',
+          loop.first ? 'first',
+          loop.last ? 'last',
+        ]
+      %}
+      <li{{ item.attributes.addClass(classes) }}>
+        {%
+          set link_classes = [
+            'nav-link',
+            item.in_active_trail ? 'active',
+          ]
+        %}
+        <a rel="nofollow" href="{{ item.url }}" title="{{ item.title }}" {{ attributes.addClass(link_classes) }}><span data-title="{{ item.title }}">{{ item.title }}</span></a>
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

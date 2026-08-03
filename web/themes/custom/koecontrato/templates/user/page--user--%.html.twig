@@ -1,0 +1,62 @@
+{% include "@koecontrato/layout/header-user.html.twig" %}
+
+{# Mensaje #}
+{% if page.aviso and 'vendedor' in user.getroles(TRUE)%}
+   <section class="aviso-koe">
+    <div class="container-fluid"> 
+      <div class="row clearfix">
+        <div class="col-12"> 
+          <b>NOTIFICACIÓN:</b> {{ 'aviso koe'|t }} <button type="button" class="btn btn-aviso ml-2" data-toggle="modal" data-target="#avisoejecutivo">Consultar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Modal -->
+  <div class="modal fade" id="avisoejecutivo" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          {{ page.aviso }}
+        </div>
+        <div class="modal-footer justify-content-center p-0">
+          <button type="button" class="btn btn-cerrar" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endif %}
+
+{% if page.aviso and 'vendedor' in user.getroles(TRUE)%}
+  <div class="page-content page_theme page_user-koe dash-koe" style="padding-top: 15px;">
+{% else %}
+<div class="page-content page_theme page_user-koe dash-koe">
+{% endif %}
+  {# System #}
+  {% if page.system %}
+    <section class="system-content_theme">
+      <div class="container-fluid"> 
+        <div class="row clearfix">
+          <div class="col-12"> 
+            {{ page.system }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {# Main content #}
+  <section class="market-actividad-content_theme">
+    <div class="container-fluid"> 
+      <div class="row clearfix">
+        <div class="col-12 col-lg-4">
+          {% include "@koecontrato/layout/menubar.html.twig" %}
+        </div>
+        <div class="col-12 col-lg-8">        
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</div>
+
+{% include "@koecontrato/layout/footer.html.twig" %}

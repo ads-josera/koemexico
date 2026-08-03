@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Contains dev_mode.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dev_mode_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dev_mode module.
+    case 'help.page.dev_mode':
+      $output = '<h3>' . t('About Development Mode') . '</h3>';
+      $output .= '<p>' . t('Enable this module to activate development mode on your Drupal site. Eg. Twig debugging, no cache, verbose error logging, etc.') . '</p>';
+      $output .= '<p>' . t('Disable this module to deactivate dev mode.') . '</p>';
+      $output .= '<p>' . t('This module will remember your existing performance settings and restore them when the module is disabled.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function dev_mode_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'dev_mode/dev-mode';
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ *
+ * Tell the browser to ditch browser caching.
+ */
+function dev_mode_page_attachments_alter(array &$attachments) {
+  $dev_mode_metas = [];
+  $metas = [
+    'cache_control' => [
+      'http-equiv' => 'Cache-Control',
+      'content' => 'no-cache, no-store, must-revalidate',
+    ],
+    'pragma' => ['http-equiv' => 'Pragma', 'content' => 'no-cache'],
+    'expires' => ['http-equiv' => 'Expires', 'content' => '0'],
+  ];
+
+  foreach ($metas as $key => $meta) {
+    $dev_mode_metas[$key] = [
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => [
+        'http-equiv' => $meta['http-equiv'],
+        'content' => $meta['content'],
+      ],
+    ];
+  }
+
+  foreach ($dev_mode_metas as $key => $dev_mode_meta) {
+    $attachments['#attached']['html_head'][] = [$dev_mode_meta, $key];
+  }
+}

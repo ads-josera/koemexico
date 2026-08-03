@@ -1,0 +1,41 @@
+<header id="site-header" class="header">
+  {% block head %}
+  {# Header #}
+  <div id="header-wrap" class="menu-principal text-uppercase bg__uni--white">
+
+    {% if 'verificador' in user.getroles(TRUE)%}
+      <nav id="navbar_km" class="navbar_air navtop_verificacion navbar navbar-expand-lg fixed-top">
+    {% else %}
+      <nav id="navbar_km" class="navbar_air navbar navbar-expand-lg fixed-top">
+    {% endif %}
+
+      {# Left #}
+      <a class="navbar-brand logo logo-color" href="{{ path('<front>') }}">
+        <img id="logo-img" class="img-center" src="{{ base_path ~ directory }}/logo.svg"/>
+      </a>
+      <a class="navbar-brand logo logo-white" href="{{ path('<front>') }}">
+        {% if 'verificador' in user.getroles(TRUE)%}
+          <img id="logo-img" class="img-center logo-ico-veri" src="{{ base_path ~ directory }}/logo-ico.svg"/>
+        {% else %}
+          <img id="logo-img" class="img-center" src="{{ base_path ~ directory }}/logo-white.svg"/>
+        {% endif %}
+      </a>
+
+      {% if page.menu %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon mt-2"><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+          {{ page.menu }}
+          <div class="navbar-toggler close-navbar bg__theme--primary font__size--lg font__letter-spacing--1" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false">CERRAR <i class="fa fa-times"></i></div>
+        </div>
+      {% endif %}
+      {% if page.menuuser %}
+        {{ page.menuuser }}
+      {% endif %}
+
+    </nav>
+
+  </div>
+  {% endblock %}
+</header>

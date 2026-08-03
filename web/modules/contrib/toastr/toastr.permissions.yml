@@ -1,0 +1,3 @@
+administer toastr:
+  title: 'Configure toastr messages behaviour'
+  description: 'Access toastr settings page.'

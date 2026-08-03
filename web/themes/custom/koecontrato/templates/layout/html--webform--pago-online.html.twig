@@ -1,0 +1,31 @@
+{% set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage home' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+    node_type == 'homepage' ? 'home' : root_path and node_type != 'blog_post' ? 'page',
+  ] %}
+<!DOCTYPE html>
+<html{{ html_attributes.addClass('km-form-online') }}>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>    
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+  </head>
+
+  <body{{ attributes.addClass('bodyTheme',body_classes) }}>
+
+    <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a>
+    <div class="page-wrapper">
+      {{ page_top }}
+      {{ page }}
+      {{ page_bottom }}
+    </div>
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+
+  </body>
+</html>

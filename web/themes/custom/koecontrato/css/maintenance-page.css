@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+@font-face { font-family: "ExcellenceInMotionScreen"; font-style: normal; font-weight: 400; src: url("../../css/fonts/ExcellenceInMotionScreen-Regular.eot?") format("eot"), url("../../css/fonts/ExcellenceInMotionScreen-Regular.woff2") format("woff2"), url("../../css/fonts/ExcellenceInMotionScreen-Regular.woff") format("woff"), url("../../css/fonts/ExcellenceInMotionScreen-Regular.ttf") format("truetype"), url("../../css/fonts/ExcellenceInMotionScreen-Regular.svg#ExcellenceInMotionScreen") format("svg"); }
+
+@font-face { font-family: "ExcellenceInMotionScreen"; font-style: bold; font-weight: 700; src: url("../../css/fonts/ExcellenceInMotionScreen-Bold.eot?") format("eot"), url("../../css/fonts/ExcellenceInMotionScreen-Bold.woff2") format("woff2"), url("../../css/fonts/ExcellenceInMotionScreen-Bold.woff") format("woff"), url("../../css/fonts/ExcellenceInMotionScreen-Bold.ttf") format("truetype"), url("../../css/fonts/ExcellenceInMotionScreen-Bold.svg#ExcellenceInMotionScreen") format("svg"); }
+
+.ps-mantenimiento { height: 100vh; background-color: #98989a; background-image: -webkit-gradient(left top, right bottom, color-stop(0%, #0033a1), color-stop(50%, #0033a1), color-stop(50%, #98989a), color-stop(100%, #98989a)); background-image: linear-gradient(135deg, #0033a1 0%, #0033a1 50%, #98989a 50%, #98989a 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF0033A1', endColorstr='#FF98989A', GradientType=1 ); }
+
+.ps-mantenimiento .container, .ps-mantenimiento .row { height: 100%; }

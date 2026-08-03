@@ -1,0 +1,194 @@
+<?php
+
+/**
+ * @file
+ * Install & requirements hooks for the dev_mode module.
+ */
+
+global $dev_mode_settings;
+$dev_mode_settings = <<<DEV_MODE_SETTINGS
+/**
+ * Development mode settings.
+ */
+if (file_exists(\$app_root . '/modules/contrib/dev_mode/settings.dev_mode.php')) {
+  include \$app_root . '/modules/contrib/dev_mode/settings.dev_mode.php';
+}
+DEV_MODE_SETTINGS;
+
+/**
+ * Implements hook_install().
+ */
+function dev_mode_install() {
+  global $dev_mode_settings;
+
+  $configs_map = [
+    'system.performance' => [
+      'css',
+      'js',
+      'cache',
+    ],
+    'system.logging' => [
+      'error_level',
+    ],
+  ];
+
+  $existing_config = [];
+  $config_factory = \Drupal::configFactory();
+  $state = \Drupal::state();
+  $logger = \Drupal::logger('dev_mode');
+
+  // Save the existing configs.
+  foreach ($configs_map as $key => $configs) {
+    foreach ($configs as $config) {
+      $existing_config[$key][$config] = $config_factory->getEditable($key)
+        ->get($config);
+    }
+  }
+  $state->set('dev_mode.config', json_encode($existing_config));
+
+  // Set system performance for CSS.
+  $config_factory->getEditable('system.performance')->set('css', [
+    'gzip' => 0,
+    'preprocess' => 0,
+  ])->save();
+
+  // Set system performance for JS.
+  $config_factory->getEditable('system.performance')->set('js', [
+    'gzip' => 0,
+    'preprocess' => 0,
+  ])->save();
+
+  // Set system performance cache and max age.
+  $config_factory->getEditable('system.performance')
+    ->set('cache', ['page' => ['max_age' => 0]])
+    ->save();
+
+  // Set system logging to max verbosity.
+  $config_factory->getEditable('system.logging')
+    ->set('error_level', 'verbose')
+    ->save();
+
+  // Attempt to write to settings.php file.
+  $settings_file_updated = FALSE;
+  $site_path = \Drupal::getContainer()->getParameter('site.path');
+  if (!empty($site_path)) {
+    // Check to see if settings.php file is writeable.
+    $settings_file = $site_path . '/settings.php';
+    if (is_writable($settings_file)) {
+      // Check to see if settings already applied.
+      if (strpos(file_get_contents($settings_file), $dev_mode_settings, 0) === FALSE) {
+        // Append settings to file.
+        file_put_contents($settings_file, $dev_mode_settings, FILE_APPEND | LOCK_EX);
+        $settings_file_updated = TRUE;
+      }
+    }
+    else {
+      // Warn user about settings.php file not being writeable.
+      $logger->warning(t(':settings_file is not writeable. Please add necessary settings manually.', [':settings_file' => $settings_file]));
+    }
+  }
+  else {
+    $logger->warning(t('Site path not found. Unable to add development mode settings to settings file.'));
+  }
+
+  // Was unable to write to settings file or failed to update.
+  // Final attempt to turn off twig caching.
+  if (!$settings_file_updated) {
+    $services_yaml = DRUPAL_ROOT . '/sites/default/services.yml';
+    if (file_exists($services_yaml)) {
+      chmod(DRUPAL_ROOT . '/sites/default', 0777);
+      touch($services_yaml);
+      chmod(DRUPAL_ROOT . '/sites/default', 0555);
+      // Turn twig debug on.
+      file_put_contents($services_yaml, str_replace('debug: false', 'debug: true', file_get_contents($services_yaml)));
+      // Auto reload to false.
+      file_put_contents($services_yaml, str_replace('auto_reload: null', 'auto_reload: false', file_get_contents($services_yaml)));
+      // Turn off twig caching.
+      file_put_contents($services_yaml, str_replace('cache: true', 'cache: false', file_get_contents($services_yaml)));
+    }
+  }
+
+  // Flush caches.
+  drupal_flush_all_caches();
+
+  // Set module weight.
+  module_set_weight('dev_mode', 49);
+
+  // Module is now enabled.
+  \Drupal::messenger()
+    ->addStatus(t('Development mode enabled! Uninstall this module to disable & restore your existing settings. This module has no user editable configurations. Do not enable on production sites!'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function dev_mode_uninstall() {
+  global $dev_mode_settings;
+
+  $config_factory = \Drupal::configFactory();
+  $logger = \Drupal::logger('dev_mode');
+  $existing_configs = \Drupal::state()->get('dev_mode.config');
+  $existing_configs = json_decode($existing_configs, TRUE);
+
+  // Reset the existing configs.
+  $existing_configs = !empty($existing_configs) ? $existing_configs : [];
+  foreach ($existing_configs as $editable => $configs) {
+    foreach ($configs as $key => $config) {
+      $config_factory->getEditable($editable)->set($key, $config)->save();
+    }
+  }
+
+  // Attempt to remove dev mode lines from settings.php file.
+  $settings_file_updated = FALSE;
+  $site_path = \Drupal::getContainer()->getParameter('site.path');
+  if (!empty($site_path)) {
+    // Check to see if settings.php file is writeable.
+    $settings_file = $site_path . '/settings.php';
+    if (is_writable($settings_file)) {
+      // Get current file contents.
+      $settings_file_contents = file_get_contents($settings_file);
+      // Replace dev mode settings lines.
+      $settings_file_contents = str_replace($dev_mode_settings, '', $settings_file_contents);
+      // Make sure we don't have any empty content.
+      if (!empty($settings_file_contents)) {
+        // Save settings file without dev_mode lines.
+        file_put_contents($settings_file, $settings_file_contents, LOCK_EX);
+        $settings_file_updated = TRUE;
+      }
+      else {
+        $logger->warning(t('Settings file was empty. Not writing any changes to settings file.'));
+      }
+    }
+    else {
+      $logger->warning(t('Settings file is not writable: %settings_file. Unable to remove development mode settings.', [
+        '%settings_file' => $settings_file,
+      ]));
+    }
+  }
+  else {
+    $logger->warning(t('Site path not found. Unable to remove development mode settings.'));
+  }
+
+  // Was unable to write to settings file or failed to update.
+  // Final attempt to turn on twig caching.
+  if (!$settings_file_updated) {
+    $services_yaml = DRUPAL_ROOT . '/sites/default/services.yml';
+    if (file_exists($services_yaml)) {
+      chmod(DRUPAL_ROOT . '/sites/default', 0777);
+      // Turn off twig debug.
+      file_put_contents($services_yaml, str_replace('debug: true', 'debug: false', file_get_contents($services_yaml)));
+      // Reset auto-reloading.
+      file_put_contents($services_yaml, str_replace('auto_reload: false', 'auto_reload: null', file_get_contents($services_yaml)));
+      // Turn on twig caching.
+      file_put_contents($services_yaml, str_replace('cache: false', 'cache: true', file_get_contents($services_yaml)));
+      chmod(DRUPAL_ROOT . '/sites/default', 0555);
+    }
+  }
+
+  // Drupal set message doesn't work with hook_uninstall() so we
+  // set a log message instead.
+  $logger->info(t('Development mode disabled! Your settings have been restored (hopefully) to how they were before the module was enabled.'));
+
+  // Flush caches.
+  drupal_flush_all_caches();
+}

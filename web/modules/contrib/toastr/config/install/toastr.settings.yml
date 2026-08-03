@@ -1,0 +1,16 @@
+toastr_toast_position: toast-top-right
+toastr_toast_type: info
+toastr_close_button: 1
+toastr_progress_bar: 1
+toastr_show_easing: swing
+toastr_hide_easing: linear
+toastr_show_method: fadeIn
+toastr_hide_method: fadeOut
+toastr_newest: 0
+toastr_prevent_duplicate: 0
+toastr_timeout: 5000
+toastr_extended_timeout: 10000
+toastr_show_duration: 300
+toastr_hide_duration: 1000
+toastr_leave_errors: 1
+toastr_tap_to_dismiss: 1

@@ -1,0 +1,5 @@
+toastr.settings_form:
+  route_name: toastr.settings
+  title: 'Toastr Messages'
+  description: 'Configure toastr messages settings.'
+  parent: system.admin_config_system

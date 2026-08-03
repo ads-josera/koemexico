@@ -1,0 +1,32 @@
+<div class="page-content page_theme page_front-koe mensaje-dinamico">
+  {# System #}
+  {% if page.system %}
+    <section class="system-content_theme">
+      <div class="container"> 
+        <div class="row clearfix">
+          <div class="col-12"> 
+            {{ page.system }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {# Main content #}
+  {% if page.content %}
+    <section class="main-content_theme">
+      <div class="container koe-node"> 
+        <div class="row clearfix justify-content-end">
+          <div class="col-12 col-md-5 ap-content"> 
+            <img class="logo-aceptacion" src="{{ base_path ~ directory }}/logo.svg"/>
+            <div class="content-mensaje">
+              {{ page.content }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+  {% endif %}
+  
+</div>
+
+{% include "@koecontrato/layout/footer.html.twig" %}

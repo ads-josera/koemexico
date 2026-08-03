@@ -1,0 +1,19 @@
+core:
+  title: 'Toastr'
+  website: https://github.com/CodeSeven/toastr
+  version: 2.1.4
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js: { type: external }
+  css:
+    theme:
+      //cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css: { }
+  dependencies:
+    - core/jquery
+
+messages:
+  title: 'Drupal messages with toastr'
+  js:
+    js/messages.js: {  }
+  dependencies:
+    - core/drupalSettings
+    - toastr/core

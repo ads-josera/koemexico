@@ -1,0 +1,32 @@
+<div class="page-content page_theme page_front-koe page-pago">
+  {# System #}
+  {% if page.system %}
+    <section class="system-content_theme">
+      <div class="container"> 
+        <div class="row clearfix">
+          <div class="col-12"> 
+            {{ page.system }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {# Main content #}
+  {% if page.content %}
+    <section class="main-content_theme">
+      <div class="container-fluid p-0 koe-node"> 
+        <div class="row clearfix">
+          <div class="col-6 p-0 col-img"> 
+            
+          </div>
+          <div class="col-4 p-0 m-auto col-form"> 
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+    </section> 
+  {% endif %}
+  
+</div>
+    
+

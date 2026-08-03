@@ -1,0 +1,30 @@
+{% include "@koecontrato/layout/header.html.twig" %}
+
+<div class="page-content page_theme page_front-koe page_actualizar-koe">
+  {# System #}
+  {% if page.system %}
+    <section class="system-content_theme">
+      <div class="container"> 
+        <div class="row clearfix">
+          <div class="col-12"> 
+            {{ page.system }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {% if page.content %}
+    <section class="main-content_theme">
+      <div class="container koe-node"> 
+        <div class="row clearfix">
+          <div class="col-12"> 
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+    </section> 
+  {% endif %}
+  
+</div>
+
+{% include "@koecontrato/layout/footer.html.twig" %}

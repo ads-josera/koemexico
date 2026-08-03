@@ -1,0 +1,52 @@
+toastr.settings:
+  type: config_object
+  label: 'Toastr settings'
+  mapping:
+    toastr_toast_position:
+      type: string
+      label: 'Position'
+    toastr_toast_type:
+      type: string
+      label: 'Default Type'
+    toastr_close_button:
+      type: boolean
+      label: 'Close Button'
+    toastr_progress_bar:
+      type: boolean
+      label: 'Progress Bar'
+    toastr_show_easing:
+      type: string
+      label: 'Show Easing'
+    toastr_hide_easing:
+      type: string
+      label: 'Hide Easing'
+    toastr_show_method:
+      type: string
+      label: 'Show method'
+    toastr_hide_method:
+      type: string
+      label: 'Hide method'
+    toastr_newest:
+      type: boolean
+      label: 'Newest on top'
+    toastr_prevent_duplicate:
+      type: boolean
+      label: 'Prevent Duplicates'
+    toastr_timeout:
+      type: integer
+      label: 'Timeout'
+    toastr_extended_timeout:
+      type: integer
+      label: 'Extended Timeout'
+    toastr_show_duration:
+      type: integer
+      label: 'Show duration'
+    toastr_hide_duration:
+      type: integer
+      label: 'Hide duration'
+    toastr_leave_errors:
+      type: boolean
+      label: 'Do not hide error messages'
+    toastr_tap_to_dismiss:
+      type: boolean
+      label: 'Tap to dismiss'

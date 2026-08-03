@@ -1,0 +1,36 @@
+{% include "@koecontrato/layout/header.html.twig" %}
+
+<div class="page-content page_theme page_user">
+  <img class="logo-user-admin" src="{{ base_path ~ directory }}/logo.svg" }}/>
+  {# System #}
+  {% if page.system %}
+    <section class="system-content_theme">
+      <div class="container-fluid"> 
+        <div class="row clearfix">
+          <div class="col-12"> 
+            {{ page.system }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {# Title #}
+  {% if page.title %}
+    <section class="title-content_theme">
+      <div class="container-fluid p-0"> 
+        <div class="row clearfix">
+          <div class="col-12"> 
+            {{ page.title }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {# Main content #}
+  {% if page.content %}
+    {{ page.content }}
+  {% endif %}
+  
+</div>
+
+{% include "@koecontrato/layout/footer.html.twig" %}

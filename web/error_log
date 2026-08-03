@@ -1,0 +1,48 @@
+[08-Sep-2025 20:52:56 America/Mexico_City] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 327680 bytes) in /home/conkmx/public_html/web/core/lib/Drupal/Core/Database/StatementWrapperIterator.php on line 113
+[08-Sep-2025 20:52:56 America/Mexico_City] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/conkmx/public_html/web/core/lib/Drupal/Core/Database/StatementWrapperIterator.php:113
+Stack trace:
+#0 /home/conkmx/public_html/web/core/lib/Drupal/Core/Database/StatementWrapperIterator.php(113): PDOStatement->execute(Array)
+#1 /home/conkmx/public_html/web/core/lib/Drupal/Core/Database/Connection.php(851): Drupal\Core\Database\StatementWrapperIterator->execute(Array, Array)
+#2 /home/conkmx/public_html/web/core/lib/Drupal/Core/Database/Schema.php(178): Drupal\Core\Database\Connection->query('SELECT 1 FROM i...', Array)
+#3 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/DatabaseStorage.php(121): Drupal\Core\Database\Schema->tableExists('config')
+#4 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/CachedStorage.php(95): Drupal\Core\Config\DatabaseStorage->readMultiple(Array)
+#5 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/ConfigFactory.php(165): Drupal\Core\Config\CachedStorage->readMultiple(Array)
+#6 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/ConfigFactory.php(104): Drupal\Core\Config\ConfigFactory->doLoadMultiple(Array, true)
+#7 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/ConfigFactory.php(89): Drupal\Core\Config\ConfigFactory->doGet('automated_cron....')
+#8 /home/conkmx/public_html/web/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(50): Drupal\Core\Config\ConfigFactory->get('automated_cron....')
+#9 /home/conkmx/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(261): Drupal\automated_cron\EventSubscriber\AutomatedCron->__construct(Object(Drupal\Core\ProxyClass\Cron), Object(Drupal\Core\Config\ConfigFactory), Object(Drupal\Core\State\State))
+#10 /home/conkmx/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(179): Drupal\Component\DependencyInjection\Container->createService(Array, 'automated_cron....')
+#11 /home/conkmx/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(105): Drupal\Component\DependencyInjection\Container->get('automated_cron....')
+#12 /home/conkmx/public_html/vendor/symfony/http-kernel/HttpKernel.php(115): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...')
+#13 /home/conkmx/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(66): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/conkmx/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(715): Drupal\Core\StackMiddleware\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/conkmx/public_html/vendor/drush/drush/src/Boot/DrupalBoot8.php(308): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 [internal function]: Drush\Boot\DrupalBoot8->terminate()
+#17 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: SELECT 1 FROM information_schema.tables WHERE ("table_schema" = :db_condition_placeholder_6) AND ("table_name" = :db_condition_placeholder_7); Array
+(
+    [:db_condition_placeholder_6] => conkmx_dbsqc1nqwyisqr
+    [:db_condition_placeholder_7] => config
+)
+ in /home/conkmx/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php:56
+Stack trace:
+#0 /home/conkmx/public_html/web/core/lib/Drupal/Core/Database/Connection.php(883): Drupal\mysql\Driver\Database\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapperIterator), Array, Array)
+#1 /home/conkmx/public_html/web/core/lib/Drupal/Core/Database/Schema.php(178): Drupal\Core\Database\Connection->query('SELECT 1 FROM i...', Array)
+#2 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/DatabaseStorage.php(121): Drupal\Core\Database\Schema->tableExists('config')
+#3 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/CachedStorage.php(95): Drupal\Core\Config\DatabaseStorage->readMultiple(Array)
+#4 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/ConfigFactory.php(165): Drupal\Core\Config\CachedStorage->readMultiple(Array)
+#5 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/ConfigFactory.php(104): Drupal\Core\Config\ConfigFactory->doLoadMultiple(Array, true)
+#6 /home/conkmx/public_html/web/core/lib/Drupal/Core/Config/ConfigFactory.php(89): Drupal\Core\Config\ConfigFactory->doGet('automated_cron....')
+#7 /home/conkmx/public_html/web/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(50): Drupal\Core\Config\ConfigFactory->get('automated_cron....')
+#8 /home/conkmx/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(261): Drupal\automated_cron\EventSubscriber\AutomatedCron->__construct(Object(Drupal\Core\ProxyClass\Cron), Object(Drupal\Core\Config\ConfigFactory), Object(Drupal\Core\State\State))
+#9 /home/conkmx/public_html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(179): Drupal\Component\DependencyInjection\Container->createService(Array, 'automated_cron....')
+#10 /home/conkmx/public_html/web/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(105): Drupal\Component\DependencyInjection\Container->get('automated_cron....')
+#11 /home/conkmx/public_html/vendor/symfony/http-kernel/HttpKernel.php(115): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...')
+#12 /home/conkmx/public_html/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(66): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#13 /home/conkmx/public_html/web/core/lib/Drupal/Core/DrupalKernel.php(715): Drupal\Core\StackMiddleware\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/conkmx/public_html/vendor/drush/drush/src/Boot/DrupalBoot8.php(308): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 [internal function]: Drush\Boot\DrupalBoot8->terminate()
+#16 {main}
+  thrown in /home/conkmx/public_html/web/core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php on line 56
+[23-Sep-2025 00:09:10 UTC] PHP Parse error:  syntax error, unexpected token ";", expecting ")" in /home/conkmx/public_html/web/modules/custom/ks/ks.module on line 209

@@ -1,0 +1,53 @@
+{% include "@koecontrato/layout/header.html.twig" %}
+
+<div class="page-content page_theme page_front-koe">
+  {# System #}
+  {% if page.system %}
+    <section class="system-content_theme">
+      <div class="container"> 
+        <div class="row clearfix">
+          <div class="col-12"> 
+            {{ page.system }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {% if page.content %}
+    <section class="main-content_theme">
+      <div class="container koe-node"> 
+        <div class="row clearfix">
+        {% if 'vendedor' in user.getroles(TRUE) %}
+          <div class="col-12 encabezado-rol encabezado-ejecutivo">
+            <h3 class="titulo-folio">MIS FOLIOS</h3>
+            <div class="banner-img banner-folios"></div>
+            <p>Esta lista es de carácter informativo y corresponde a los folios realizados por el asesor. NO IMPLICA que estos consecutivos sean Matrículas OK. Para conocer las matrículas efectivas por favor diríjase a DPS para consulta.</p>
+          </div>
+        {% endif %}
+        {% if 'master' in user.getroles(TRUE) %}
+          <div class="col-12 encabezado-rol encabezado-master">
+            <h3 class="titulo-folio">PUBLICIDAD KOE</h3>
+            <div class="banner-img banner-master"></div>
+          </div>
+        {% endif %}
+        {% if 'supervisor' in user.getroles(TRUE) %}
+          <div class="col-12 encabezado-rol encabezado-supervisor">
+            <h3 class="titulo-folio">KOE MÉXICO | CONTRATOS</h3>
+            <div class="banner-img banner-supervisor"></div>
+          </div>
+        {% endif %}
+          <div class="col-12"> 
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+    </section> 
+  {% endif %}
+  
+</div>
+<div id="km-modal-loading" class="mfp-hide km-loading">
+  <div class="km-txtload">Procesando</div>
+  <div class="km-load"><hr/><hr/><hr/><hr/></div>
+</div>
+
+{% include "@koecontrato/layout/footer.html.twig" %}

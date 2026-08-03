@@ -1,0 +1,7 @@
+toastr.settings:
+  path: '/admin/config/system/toastr'
+  defaults:
+    _form: '\Drupal\toastr\Form\ToastrSettingsForm'
+    _title: 'Toastr message settings'
+  requirements:
+    _permission: 'administer toastr'

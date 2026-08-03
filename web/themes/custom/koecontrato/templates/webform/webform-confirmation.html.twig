@@ -1,0 +1,42 @@
+﻿{#
+/**
+ * @file
+ * Default theme implementation to webform confirmation.
+ *
+ * Available variables:
+ * - progress: Progress bar.
+ * - message: Confirmation message.
+ * - back_url: URL to the previous webform submission.
+ *
+ * @see template_preprocess_webform_confirmation()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('webform/webform.confirmation') }}
+
+{% if progress %}
+  {{ progress }}
+{% endif %}
+
+<div{{ attributes.addClass('webform-confirmation') }}>
+
+  {% set values = webform_submission.getData() %}
+
+  {% if webform.id in ['chequeo', 'bienvenida', 'facturacion', 'entrega', 'privacidad'] and values.efirma %}
+  
+    El formato de verificación ha sido creado y esta a la espera de ser <a href="/verificacion/efirma" class="mlink-efirma">enviado a firma electrónica (Weetrust)</a>
+  
+  {% else %}
+  
+    {{ message }}
+  
+  {% endif %}
+
+  {% if back %}
+  <div class="webform-confirmation__back">
+    <a href="{{ back_url }}" rel="prev"{{ back_attributes }}>{{ back_label }}</a>
+  </div>
+  {% endif %}
+
+</div>

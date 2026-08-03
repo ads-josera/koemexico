@@ -1,0 +1,63 @@
+global-styling:
+  version: 1.34
+
+  css:
+    ### Usando SMACSS
+    base:
+      ### AWESOME -->
+      'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css': { type: external }
+      ### BOOSTRAP -->
+      css/bootstrap/bootstrap.min.css: { preprocess: 0, minified: true }
+      ### Base -->
+      css/base/base.css: { preprocess: 0, minified: true }
+    layout:
+      ### Layout -->
+      css/layout/layout.css: { preprocess: 0, minified: true }
+    component:
+      ### Component -->
+      css/component/component.css: { preprocess: 0, minified: true }
+    state:
+      ### State -->
+      css/state/state.css: { preprocess: 0, minified: true }
+    theme:
+      ### Template -->
+      css/template/template.css: { preprocess: 0, minified: true }
+      ### POPUP -->
+      css/popup/magnific-popup.css: { preprocess: 0, minified: true }
+      ### Custom -->
+      css/theme/theme.css: { preprocess: 0, minified: true } 
+      ### Custom OUT OF SASS -->
+      css/koecontrato.css: { preprocess: 0, minified: true } 
+
+  js:
+    ### BOOSTRAP -->
+    js/bootstrap/popper.min.js: { preprocess: 0, minified: true }
+    js/bootstrap/bootstrap.min.js: { preprocess: 0, minified: true }
+    ### js POPUP -->
+    js/popup/magnific-popup.js: { preprocess: 0, minified: true }   
+    ### custom js -->
+    js/koecontrato.js: { preprocess: 0, minified: false }
+
+
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+
+maintenance-page:
+  version: 1.0
+  ### Mantenimiento -->
+  css:
+    theme:
+      css/maintenance-page.css: { preprocess: 0, minified: true }
+  dependencies:
+    - system/maintenance
+
+system-page:
+  version: 1.0
+  ### BackEnd -->
+  css:
+    theme:
+      css/system-page.css: { preprocess: 0, minified: true }
+
