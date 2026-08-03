@@ -60,13 +60,28 @@ final class SesApiMailer implements MailInterface, ContainerFactoryPluginInterfa
    * {@inheritdoc}
    */
   public function format(array $message): array {
-    foreach ($message['body'] as &$part) {
-      $part = $part instanceof MarkupInterface
-        ? MailFormatHelper::htmlToText($part)
+    $body = is_array($message['body'] ?? NULL) ? $message['body'] : [$message['body'] ?? ''];
+    $is_html = $this->isHtmlMessage($message);
+
+    foreach ($body as $part) {
+      // Webform supplies HTML email bodies as markup. Preserve it instead of
+      // converting it to plain text, otherwise CSS and markup are displayed
+      // literally by the recipient's mail client.
+      $is_html = $is_html || $part instanceof MarkupInterface;
+    }
+
+    foreach ($body as &$part) {
+      $part = $is_html
+        ? (string) $part
         : MailFormatHelper::wrapMail((string) $part);
     }
 
-    $message['body'] = implode("\n\n", $message['body']);
+    if ($is_html) {
+      $message['html'] = TRUE;
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8';
+    }
+
+    $message['body'] = implode("\n\n", $body);
     return $message;
   }
 
@@ -242,7 +257,7 @@ final class SesApiMailer implements MailInterface, ContainerFactoryPluginInterfa
     }
 
     $body = (string) $message['body'];
-    if (str_starts_with(strtolower($headers['content-type'] ?? ''), 'text/html')) {
+    if ($this->isHtmlMessage($message)) {
       $email->html($body);
     }
     else {
@@ -301,6 +316,18 @@ final class SesApiMailer implements MailInterface, ContainerFactoryPluginInterfa
       $headers[strtolower((string) $name)] = (string) $value;
     }
     return $headers;
+  }
+
+  /**
+   * Determines whether a Drupal mail message contains HTML.
+   */
+  private function isHtmlMessage(array $message): bool {
+    if (!empty($message['html'])) {
+      return TRUE;
+    }
+
+    $headers = $this->headers($message);
+    return str_starts_with(strtolower($headers['content-type'] ?? ''), 'text/html');
   }
 
   /**
