@@ -5,7 +5,6 @@ namespace Drupal\pdf\Plugin\Field\FieldFormatter;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Url;
 
 /**
  * @FieldFormatter(
@@ -16,6 +15,10 @@ use Drupal\Core\Url;
  * )
  */
 class PdfThumbnail extends FormatterBase {
+
+  /**
+   *
+   */
   public static function defaultSettings() {
     return [
       'scale' => 1,
@@ -24,6 +27,9 @@ class PdfThumbnail extends FormatterBase {
     ] + parent::defaultSettings();
   }
 
+  /**
+   *
+   */
   public function settingsForm(array $form, FormStateInterface $form_state) {
     $elements = parent::settingsForm($form, $form_state);
     $elements['scale'] = [
@@ -46,6 +52,9 @@ class PdfThumbnail extends FormatterBase {
     return $elements;
   }
 
+  /**
+   *
+   */
   public function settingsSummary() {
     $summary = [];
 
@@ -59,12 +68,15 @@ class PdfThumbnail extends FormatterBase {
       $summary[] = t('Scale: @scale, Width: @width, Height: @height', [
         '@scale' => $scale,
         '@width' => $width,
-        '@height' => $height
+        '@height' => $height,
       ]);
     }
     return $summary;
   }
 
+  /**
+   *
+   */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
     foreach ($items as $delta => $item) {
@@ -73,7 +85,7 @@ class PdfThumbnail extends FormatterBase {
         $html = [
           '#type' => 'html_tag',
           '#tag' => 'canvas',
-          //'#value' => ,
+          // '#value' => ,
           '#attributes' => [
             'class' => ['pdf-thumbnail', 'pdf-canvas'],
             'id' => ['pdf-thumbnail-' . $delta],
@@ -101,4 +113,5 @@ class PdfThumbnail extends FormatterBase {
 
     return $elements;
   }
+
 }

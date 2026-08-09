@@ -5,7 +5,6 @@ namespace Drupal\pdf\Plugin\Field\FieldFormatter;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Url;
 
 /**
  * @FieldFormatter(
@@ -17,12 +16,18 @@ use Drupal\Core\Url;
  */
 class PdfPages extends FormatterBase {
 
+  /**
+   *
+   */
   public static function defaultSettings() {
     return [
       'scale' => 1,
     ] + parent::defaultSettings();
   }
 
+  /**
+   *
+   */
   public function settingsForm(array $form, FormStateInterface $form_state) {
     $elements['scale'] = [
       '#type' => 'textfield',
@@ -32,6 +37,9 @@ class PdfPages extends FormatterBase {
     return $elements;
   }
 
+  /**
+   *
+   */
   public function settingsSummary() {
     $summary = [];
     $scale = $this->getSetting('scale');
@@ -45,6 +53,9 @@ class PdfPages extends FormatterBase {
     return $summary;
   }
 
+  /**
+   *
+   */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
     foreach ($items as $delta => $item) {
@@ -54,7 +65,7 @@ class PdfPages extends FormatterBase {
         $html = [
           '#type' => 'html_tag',
           '#tag' => 'div',
-          //'#value' => TODO,
+          // '#value' => TODO,
           '#attributes' => [
             'class' => ['pdf-pages'],
             'id' => ['pdf-pages-' . $delta],
@@ -80,4 +91,5 @@ class PdfPages extends FormatterBase {
     ];
     return $elements;
   }
+
 }
