@@ -1,0 +1,38 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Installation hooks for KOE Bitácora Filters.
+ */
+
+use Drupal\views\Entity\View;
+
+/**
+ * Initial release update retained for installed development environments.
+ */
+function koe_bitacora_filters_update_10001(): void {
+  // The date behavior is implemented through hook_views_pre_execute().
+}
+
+/**
+ * Restores the standard Views date handler after the initial implementation.
+ */
+function koe_bitacora_filters_update_10002(): void {
+  $view = View::load('bitacora');
+  if (!$view) {
+    return;
+  }
+
+  $displays = $view->get('display');
+  $filter = &$displays['default']['display_options']['filters']['completed'];
+
+  if (($filter['plugin_id'] ?? NULL) !== 'koe_day_date') {
+    return;
+  }
+
+  $filter['plugin_id'] = 'date';
+  $view->set('display', $displays);
+  $view->save();
+}

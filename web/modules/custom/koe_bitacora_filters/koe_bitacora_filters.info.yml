@@ -1,0 +1,7 @@
+name: KOE Bitácora Filters
+type: module
+description: Provides date filtering behavior for the Bitácora report.
+package: KOE
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:views

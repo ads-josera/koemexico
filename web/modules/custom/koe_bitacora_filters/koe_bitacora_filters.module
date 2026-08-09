@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * @file
+ * Hooks for KOE Bitácora Filters.
+ */
+
+/**
+ * Makes the Bitácora date selector match the whole selected calendar day.
+ */
+function koe_bitacora_filters_views_pre_execute(ViewExecutable $view): void {
+  if ($view->id() !== 'bitacora') {
+    return;
+  }
+
+  $date = $view->filter['completed']->value['value']
+    ?? $view->getExposedInput()['completed']
+    ?? NULL;
+  if (!is_string($date) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
+    return;
+  }
+
+  $start = strtotime($date . ' 00:00:00');
+  $end = strtotime('+1 day', $start) - 1;
+
+  foreach ($view->query->where as &$group) {
+    foreach ($group['conditions'] as &$condition) {
+      if (
+        ($condition['operator'] ?? NULL) === 'formula'
+        && preg_match('/^(.+\.completed) = \d+$/', $condition['field'], $matches)
+      ) {
+        $condition['field'] = $matches[1] . " BETWEEN $start AND $end";
+        return;
+      }
+    }
+  }
+}
