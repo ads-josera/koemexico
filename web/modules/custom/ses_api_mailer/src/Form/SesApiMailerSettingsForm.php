@@ -111,6 +111,7 @@ final class SesApiMailerSettingsForm extends ConfigFormBase {
         . '<div class="ses-api-mailer-status__fact"><span class="ses-api-mailer-status__label">' . $this->t('Credenciales en settings.php') . '</span><span class="ses-api-mailer-status__value">' . $credentials_badge . '</span></div>'
         . '</div></div>',
     ];
+    $form['status']['health'] = $this->deliveryHealth();
     $form['status']['enabled'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Usar este módulo para los correos de Drupal'),
@@ -143,6 +144,13 @@ final class SesApiMailerSettingsForm extends ConfigFormBase {
       '#min' => 0,
       '#step' => 1,
       '#description' => $this->t('El valor inicial es 50. El límite se aplica a todos los correos de Drupal enviados por SES. Usa 0 para desactivarlo. Un correo a varios destinatarios cuenta una vez por cada destinatario.'),
+    ];
+    $form['limit']['alert_recipients'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Destinatarios de alertas preventivas'),
+      '#default_value' => (string) $this->config('ses_api_mailer.settings')->get('alert_recipients'),
+      '#rows' => 2,
+      '#description' => $this->t('Recibirán un aviso una vez al alcanzar el 80% y el 100% del límite diario. Escribe un correo por línea o sepáralos por coma. Las alertas no consumen el límite local de Drupal para que el aviso de 100% pueda enviarse.'),
     ];
 
     $month_options = $this->monthOptions();
@@ -222,6 +230,7 @@ final class SesApiMailerSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     $settings = $this->configFactory->getEditable('ses_api_mailer.settings');
     $settings->set('daily_send_limit', max(0, (int) $form_state->getValue('daily_send_limit')));
+    $settings->set('alert_recipients', trim((string) $form_state->getValue('alert_recipients')));
     $system_mail = $this->configFactory->getEditable('system.mail');
     $current = $this->currentMailer();
     $system_default = (string) ($system_mail->get('interface.default') ?: 'php_mail');
@@ -341,6 +350,58 @@ final class SesApiMailerSettingsForm extends ConfigFormBase {
     $timezone = (string) ($this->config('system.date')->get('timezone.default') ?: date_default_timezone_get());
     $day = (new \DateTimeImmutable('now', new \DateTimeZone($timezone)))->format('Y-m-d');
     return (int) $this->state->get('ses_api_mailer.daily_send_count.' . $day, 0);
+  }
+
+  /**
+   * Builds a local operational health summary without contacting AWS.
+   */
+  private function deliveryHealth(): array {
+    $limit = max(0, (int) ($this->config('ses_api_mailer.settings')->get('daily_send_limit') ?? 50));
+    $sent = $this->dailySentCount();
+    $percentage = $limit === 0 ? 0 : (int) ceil(($sent / $limit) * 100);
+    $level = $limit > 0 && $sent >= $limit ? 'limit' : ($limit > 0 && $percentage >= 80 ? 'warning' : 'ready');
+    $message = match ($level) {
+      'limit' => $this->t('El límite local diario ya se alcanzó. Drupal bloqueará nuevos envíos por SES hasta el siguiente día.'),
+      'warning' => $this->t('Se ha utilizado el @percentage% del límite local diario. Considera ajustar el límite antes de que se bloqueen envíos.', ['@percentage' => $percentage]),
+      default => $limit === 0
+        ? $this->t('No hay límite local configurado. El contador se mantiene para consulta operativa.')
+        : $this->t('El consumo local se encuentra dentro del límite diario configurado.'),
+    };
+
+    $success = $this->state->get('ses_api_mailer.last_success', []);
+    $failure = $this->state->get('ses_api_mailer.last_failure', []);
+    $last_success = is_array($success) ? $this->formatEvent($success, FALSE) : $this->t('Aún no hay envíos registrados.');
+    $last_failure = is_array($failure) ? $this->formatEvent($failure, TRUE) : $this->t('No hay errores registrados desde que se activó este seguimiento.');
+
+    return [
+      '#markup' => '<div class="ses-api-mailer-health ses-api-mailer-health--' . $level . '">'
+        . '<div class="ses-api-mailer-health__headline"><strong>' . $this->t('Salud de entrega local') . '</strong><span>' . $message . '</span></div>'
+        . '<div class="ses-api-mailer-health__facts">'
+        . '<div><span>' . $this->t('Uso hoy') . '</span><strong>' . ($limit === 0 ? $sent : $sent . ' / ' . $limit) . '</strong></div>'
+        . '<div><span>' . $this->t('Último envío aceptado') . '</span><strong>' . $last_success . '</strong></div>'
+        . '<div><span>' . $this->t('Último error registrado') . '</span><strong>' . $last_failure . '</strong></div>'
+        . '</div></div>',
+    ];
+  }
+
+  /**
+   * Formats a private local delivery event for administrators.
+   */
+  private function formatEvent(array $event, bool $failure): string {
+    $timestamp = (int) ($event['timestamp'] ?? 0);
+    if ($timestamp <= 0) {
+      return (string) $this->t('No disponible');
+    }
+
+    $timezone = new \DateTimeZone((string) ($this->config('system.date')->get('timezone.default') ?: date_default_timezone_get()));
+    $date = (new \DateTimeImmutable('@' . $timestamp))->setTimezone($timezone)->format('d/m/Y H:i');
+    if ($failure) {
+      $reason = trim((string) ($event['reason'] ?? ''));
+      return Html::escape($date . ($reason !== '' ? ' - ' . $reason : ''));
+    }
+
+    $recipients = max(0, (int) ($event['recipients'] ?? 0));
+    return Html::escape($date . ($recipients > 0 ? ' - ' . $this->formatPlural($recipients, '1 destinatario', '@count destinatarios') : ''));
   }
 
   /**

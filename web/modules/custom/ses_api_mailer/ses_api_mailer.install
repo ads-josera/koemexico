@@ -14,3 +14,13 @@ function ses_api_mailer_update_10001(): void {
     $config->set('daily_send_limit', 50)->save();
   }
 }
+
+/**
+ * Adds configured recipients for local usage alerts.
+ */
+function ses_api_mailer_update_10002(): void {
+  $config = \Drupal::configFactory()->getEditable('ses_api_mailer.settings');
+  if ($config->get('alert_recipients') === NULL) {
+    $config->set('alert_recipients', '')->save();
+  }
+}
