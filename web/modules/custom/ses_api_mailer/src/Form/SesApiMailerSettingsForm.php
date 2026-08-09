@@ -380,8 +380,10 @@ final class SesApiMailerSettingsForm extends ConfigFormBase {
     $rows = [];
     foreach ($counts as $day => $count) {
       $rows[] = [
-        'date' => ['#plain_text' => (new \DateTimeImmutable($day))->format('d/m/Y')],
-        'count' => ['#plain_text' => (string) $count],
+        'data' => [
+          ['data' => (new \DateTimeImmutable($day))->format('d/m/Y')],
+          ['data' => (string) $count],
+        ],
       ];
     }
 
