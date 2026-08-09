@@ -1,6 +1,6 @@
-name: Queue UI Derivative Queue
+name: 'Queue UI Test'
 type: module
-description: 'Provides testing definitions for Queue UI Derivative Queue'
+description: 'Support module for Queue UI tests.'
 package: Testing
 dependencies:
   - queue_ui:queue_ui
